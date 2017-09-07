@@ -1,9 +1,7 @@
 import React, { Component } from "react"
-// import { extendObservable, observable } from "mobx"
-// import { observer } from "mobx-react"
 
 import logo from "./logo.svg"
-import "./App.css";
+import styles from "./index.css"
 
 import Resizer from "./components/Resizer"
 
@@ -11,7 +9,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={styles.app}>
         <Resizer logo={logo} />
       </div>
     );
