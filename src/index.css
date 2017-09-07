@@ -1,12 +1,11 @@
 .app {
-  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
 }
 
-.app div img {
-  animation: App-logo-spin infinite 20s linear;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.app > * {
+  margin: 0 1rem;
 }

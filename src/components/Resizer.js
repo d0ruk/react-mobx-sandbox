@@ -1,11 +1,13 @@
 import React, { Component } from "react"
-import { extendObservable, observable } from "mobx"
+import { observable } from "mobx"
 import { observer } from "mobx-react"
 
-@observer
-export default class App extends Component {
+import styles from "./Resizer.css"
 
-  @observable step = 2;
+@observer
+export default class Resizer extends Component {
+
+  @observable step = 3
 
   render() {
     const { logo } = this.props;
@@ -13,34 +15,40 @@ export default class App extends Component {
     return (
       <div>
         <img
+          className={styles.logo}
           src={logo}
           height={this.step * 50}
+          alt="logo"
         />
-        <p>
+        <div className={styles.buttons}>
           <button
-            className="button"
             onClick={this.onIncrement}
           >
             +
           </button>
           <button
-            className="button"
             onClick={this.onDecrement}
           >
             -
           </button>
-        </p>
+        </div>
       </div>
     );
   }
 
   onIncrement = evt => {
     evt.preventDefault();
+    if (this.step > 5)
+      return this.step = 3;
+
     this.step++;
   }
 
   onDecrement = evt => {
     evt.preventDefault();
+    if (this.step === 1)
+      return this.step = 3;
+
     this.step--;
   }
 }
