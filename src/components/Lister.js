@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { observable, action } from "mobx"
+import { observable } from "mobx"
 import { observer } from "mobx-react"
 
 import styles from "./Lister.css"
@@ -9,13 +9,8 @@ const template = handle => `https://api.github.com/users/${handle}/repos`;
 @observer
 class Lister extends Component {
 
-  @observable handle = "";
-  @observable repos = [];
-
-  constructor(...args) {
-    super(...args);
-    this.onFetch = this.onFetch.bind(this);
-  }
+  @observable handle = ""
+  @observable repos = []
 
   render() {
     return (

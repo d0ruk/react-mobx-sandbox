@@ -11,10 +11,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className={styles.app}>
-        <Resizer logo={logo} />
-        <Storer />
-        <Lister />
+      <div className={`${styles.app} row center-xs`}>
+        <div className="col-xs">
+          <div className="box">
+            <Resizer logo={logo} />
+            <Storer />
+            <Lister />
+          </div>
+        </div>
       </div>
     );
   }

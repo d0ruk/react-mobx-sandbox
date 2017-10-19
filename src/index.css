@@ -6,6 +6,8 @@
   align-content: flex-start;
 }
 
-.app > * {
-  margin: 0 1rem;
+.app > div > div > * {
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.3);
 }
